@@ -11,6 +11,13 @@ import { useContext, useEffect, useState } from "react";
 import { Web5Context } from "../utils/Web5Context";
 import SpecialistsList from "../components/SpecialistsList";
 import BookingForm from "../components/AppointmentForm";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 const Farmer = () => {
   const { web5, did, protocolDefinition, specialistList, logout } = useContext(
@@ -24,7 +31,7 @@ const Farmer = () => {
   const [selectedSpecialist, setSelectedSpecialist] = useState(null);
   const [recipientDid, setRecipientDid] = useState("");
   const [showPopUp, setShowPopUp] = useState(false);
-  const [showMedical, setShowMedical] = useState(false);
+  const [showMedical, setShowRecord] = useState(false);
   const [addKin, setAddKin] = useState(false);
   const [medicalData, setMedicalData] = useState([]);
 
@@ -208,8 +215,9 @@ const Farmer = () => {
                 </h2>
               </div>
               <div className="w-full inline-flex item-center justify-between gap-x-16">
+                
                 {/* Farmer info */}
-                <div className="bg-[#41CBE2] rounded-xl p-4 w-2/5 max-h-[250px]">
+                <div className="bg-[#4caf50] rounded-xl p-4 w-2/5 max-h-[250px]">
                   <div className="bg-white rounded-xl p-4 mb-8">
                     <h3 className="text-[20px] font-medium">DID</h3>
                     <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
@@ -240,7 +248,7 @@ const Farmer = () => {
                   </div>
                 </div>
                 {/* Specialist's list*/}
-                <div className="bg-[#41CBE2] rounded-xl p-4 w-3/5">
+                <div className="bg-[#4caf50] rounded-xl p-4 w-3/5">
                   <div className="inline-flex items-center justify-between w-full">
                     <h3 className="inline-flex space-x-4 items-center justify-between text-[20px]">
                       <span className="font-semibold text-white">
@@ -280,7 +288,7 @@ const Farmer = () => {
                           </span>
                           <div>
                             <h4 className="text-[16px] text-black">
-                            {specialist.name}
+                              {specialist.name}
                             </h4>
                             <span className="text-[12px] text-[#0d0d0d60]">
                               {specialist.speciality}
@@ -328,7 +336,7 @@ const Farmer = () => {
                 <div className="rounded-xl p-4 w-1/3">
                   <div className="relative">
                     <img
-                      src="/assets/images/farmer_booking.png"
+                      src="/assets/images/hero.png"
                       className="relative object-contain"
                       alt="farmer booking"
                     />
@@ -338,8 +346,8 @@ const Farmer = () => {
                       </p>
                       <div>
                         <span
-                          onClick={() => setShowMedical(true)}
-                          className="inline-flex cursor-pointer space-x-2 px-5 py-3 items-center justify-center bg-[#41CBE2] rounded-2xl"
+                          onClick={() => setShowRecord(true)}
+                          className="inline-flex cursor-pointer space-x-2 px-5 py-3 items-center justify-center bg-og-blue rounded-2xl"
                         >
                           View
                         </span>
@@ -350,7 +358,7 @@ const Farmer = () => {
                             bg-white flex-col space-y-5"
                             >
                               <button
-                                onClick={() => setShowMedical(false)}
+                                onClick={() => setShowRecord(false)}
                                 className="bg-red-500 text-white py-2 px-5 text-center rounded-full"
                               >
                                 Close me!
@@ -475,7 +483,7 @@ const Farmer = () => {
               </div>
 
               <div className="bg-[#FFFFFF] rounded-xl p-4 w-3/5 h-32">
-                <div className="w-full px-5 py-3 mb-2 bg-[#41CBE2] rounded-xl inline-flex items-center justify-start gap-4 space-x-3">
+                <div className="w-full px-5 py-3 mb-2 bg-og-blue rounded-xl inline-flex items-center justify-start gap-4 space-x-3">
                   <div className="px-5 py-3 rounded-xl inline-flex items-center justify-start space-x-3 w-1/2">
                     <div>
                       <h4 className="text-[16px] text-black">
@@ -483,7 +491,7 @@ const Farmer = () => {
                       </h4>
                     </div>
                     <span
-                      className="h-6 w-10 bg-white text-[12px] text-[#41CBE2] flex 
+                      className="h-6 w-10 bg-white text-[12px] text-og-blue flex 
                                     items-center justify-center rounded"
                     >
                       40
@@ -495,7 +503,7 @@ const Farmer = () => {
                       <h4 className="text-[16px] text-black">Total Visists</h4>
                     </div>
                     <span
-                      className="h-6 w-10 text-[12px] bg-white text-[#41CBE2] flex 
+                      className="h-6 w-10 text-[12px] bg-white text-[#4caf50] flex 
                                     items-center justify-center rounded"
                     >
                       40

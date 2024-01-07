@@ -16,13 +16,17 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     const connectWeb5 = async () => {
       try {
+        console.log("Attempting to connect to Web5...");
         const { web5, did } = await Web5.connect();
+        console.log("Web5 connected successfully:", web5);
         setWeb5(web5);
         setDid(did);
+        console.log("did" + did);
       } catch (error) {
         console.error("Error Connecting to web5 : ", error);
       }
     };
+    
 
     const storedUserType = localStorage.getItem("userType");
     if (storedUserType) {

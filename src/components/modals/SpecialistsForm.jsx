@@ -17,6 +17,7 @@ export default function SpecialistsForm({ userType, closeModal }) {
     speciality: "",
     experience: "",
     did: did,
+    location: "",
   });
 
   const handleChange = (e) => {
@@ -50,8 +51,26 @@ export default function SpecialistsForm({ userType, closeModal }) {
     }
   };
 
+  const getCurrentLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setFormState({
+          ...formState,
+          location: `${latitude}, ${longitude}`,
+          
+        });
+        console.log(location);
+      },
+      (error) => {
+        console.error("Error getting location: ", error);
+      }
+    );
+  };
+
   const formSubmit = (e) => {
     e.preventDefault();
+    getCurrentLocation(); 
     createSpecialist().finally(() => {
       setUserTypeAndRedirect("specialist");
       closeModal();
@@ -109,6 +128,20 @@ export default function SpecialistsForm({ userType, closeModal }) {
             value={formState.experience}
             onChange={handleChange}
             className="w-[410px] h-[53px] px-5 bg-white rounded-2xl border border-sky-400"
+          />
+        </div>
+        <div className="flex flex-col gap-[17px] pb-7">
+          <label htmlFor="location" className="text-lg font-normal text-black ">
+            Location
+          </label>
+          <input
+            id="location"
+            type="text"
+            required
+            name="location"
+            value={formState.location}
+            readOnly
+            className="w-[410px] h-[53px] px-5 bg-white rounded-2xl border border-sky-400 "
           />
         </div>
 

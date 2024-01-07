@@ -64,7 +64,7 @@ const Specialists = ({ specialistData }) => {
           {specialistData.map((specialist, index) => {
             return (
               <SwiperSlide
-                className="border border-[#41CBE2] shadow-lg rounded-xl bg-[#ecfafc] p-3 text-center font-light"
+                className="border border-[#4caf50] shadow-lg rounded-xl bg-[#ecfafc] p-3 text-center font-light"
                 key={index}
               >
                 <img
