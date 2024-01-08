@@ -139,6 +139,7 @@ const Specialist = () => {
 
     return dateA - dateB;
   });
+  console.log(specialistData.name);
 
   return (
     <div className="w-full mx-auto bg-og-blue p-5">

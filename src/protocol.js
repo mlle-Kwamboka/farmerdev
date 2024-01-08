@@ -1,17 +1,17 @@
 export const protocolDefinition = {
-  "protocol": "http://localhost:5173",
+  "protocol": "http://localhost:5000",
   "published": true,
   "types": {
     "farmerProfile": {
-      "schema": "http://localhost:5173/farmerProfile",
+      "schema": "http://localhost:5000/farmerProfile",
       "dataFormats": ["application/json"]
     },
     "specialistProfile": {
-      "schema": "http://localhost:5173/specialistProfile",
+      "schema": "http://localhost:5000/specialistProfile",
       "dataFormats": ["application/json"]
     },
     "medicalRecords": {
-      "schema": "http://localhost:5173/medicalRecords",
+      "schema": "http://localhost:5000/medicalRecords",
       "dataFormats": ["application/json"]
     }
   },
