@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Web5Context } from "../utils/Web5Context";
 import BookingForm from "./AppointmentForm";
+import {specialistData} from "./specialistsData.js"
 
 // eslint-disable-next-line react/prop-types
 const SpecialistsList = ({ close }) => {
@@ -24,6 +25,9 @@ const SpecialistsList = ({ close }) => {
   const handleFormSubmit = () => {
     setShowBookingForm(false);
   };
+
+  console.log(specialistData);
+  console.log("Spec data : ",specialistData)
   return (
     <div className="mx-auto h-screen bg-white w-[85%] p-3 rounded-lg">
       <button
