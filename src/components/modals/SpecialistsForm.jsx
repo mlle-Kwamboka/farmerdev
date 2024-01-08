@@ -28,7 +28,9 @@ export default function SpecialistsForm({ userType, closeModal }) {
   };
 
   const createSpecialist = async () => {
+    
     try {
+      console.log("Data to be saved:", formState);
       const { record, status } = await web5.dwn.records.write({
         data: { ...formState },
         message: {
