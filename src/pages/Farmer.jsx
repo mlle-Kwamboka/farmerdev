@@ -215,47 +215,18 @@ const Farmer = () => {
             </nav>
 
             <div className="w-full mx-auto space-y-5">
-              <div className="w-full inline-flex item-center justify-between">
+              <div className="w-full inline-flex item-center justify-between ">
                 <h2 className="text-[36px] font-normal">
                   Welcome{" "}
                   <span className="text-olive-green font-bold">
-                    {farmerData.name}!
+                    {/* {farmerData.name}! */}
                   </span>
                 </h2>
               </div>
               <div className="w-full inline-flex item-center justify-between gap-x-16">
                 
                 {/* Farmer info */}
-                <div className="bg-[#4caf50] rounded-xl p-4 w-2/5 max-h-[250px]">
-                  <div className="bg-white rounded-xl p-4 mb-8">
-                    <h3 className="text-[20px] font-medium">DID</h3>
-                    <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
-                      <span>{did?.slice(8, 20) + "..." + did?.slice(-8)}</span>
-                      <button
-                        className="flex gap-2"
-                        onClick={handleCopy}
-                        type="button"
-                      >
-                        <DocumentDuplicateIcon className="h-5 w-5" />
-                        {isCopied ? (
-                          <p className="bg-gray-400 text-sm text-white p-1 rounded-3xl">
-                            Copied!
-                          </p>
-                        ) : (
-                          ""
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-xl p-4 mb-8">
-                    <h3 className="text-[20px] font-medium">Age</h3>
-                    <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
-                      {/* {calculateAge(farmerData.dob) <= 1
-                        ? `${calculateAge(farmerData.dob)} year old`
-                        : `${calculateAge(farmerData.dob)} years old`} */}
-                    </div>
-                  </div>
-                </div>
+               
                 {/* Specialist's list*/}
                 <div className="bg-[#4caf50] rounded-xl p-4 w-3/5">
                   <div className="inline-flex items-center justify-between w-full">
@@ -339,7 +310,30 @@ const Farmer = () => {
               <div className="w-full inline-flex item-center justify-between gap-x-8">
                 {/* 1st */}
                 <div className="rounded-xl p-4 w-1/3 h-50">
-                  <Calendar />
+                <div className="bg-[#4caf50] rounded-xl p-4 w-2/5 max-h-[150px]" >
+                  <div className="bg-white rounded-xl p-4 mb-8">
+                    <h3 className="text-[20px] font-medium">DID</h3>
+                    <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
+                      <span>{did?.slice(8, 20) + "..." + did?.slice(-8)}</span>
+                      <button
+                        className="flex gap-2"
+                        onClick={handleCopy}
+                        type="button"
+                      >
+                        <DocumentDuplicateIcon className="h-5 w-5" />
+                        {isCopied ? (
+                          <p className="bg-gray-400 text-sm text-white p-1 rounded-3xl">
+                            Copied!
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                  
+                </div>
+                  {/* <Calendar /> */}
                 </div>
                 {/* 2nd */}
                 <div className="rounded-xl p-4 w-1/3">

@@ -250,9 +250,7 @@ const Specialist = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="w-[350px]">
-                      <Calendar />
-                    </div>
+        
                   </div>
 
                   {/* Right */}
@@ -384,9 +382,7 @@ const Specialist = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-1/4 h-[180px] rounded-xl overflow-hidden">
-                    <img src={Layer} className="w-full h-full object-cover" />
-                  </div>
+
                   <div className="flex-1 w-2/4">
                     <div className="w-full flex items-center justify-between  bg-og-blue p-5 rounded-3xl">
                       <div className="flex flex-col items-start justify-between space-y-8">
