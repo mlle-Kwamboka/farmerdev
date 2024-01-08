@@ -89,6 +89,8 @@ const Farmer = () => {
       }
     };
 
+    console.log('Farmer data' + farmerData)
+
     const fetchMedicalRecord = async () => {
       try {
          console.log("Fetching farmer Profile");
@@ -103,7 +105,7 @@ const Farmer = () => {
         });
 
         if (response.status.code === 200) {
-          console.log("Respone" + response)
+          console.log("Respone" + response.status.code)
           const medicalRec = await Promise.all(
             response.records.map(async (record) => {
               const data = await record.data.json();
