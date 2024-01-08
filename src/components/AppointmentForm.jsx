@@ -22,8 +22,8 @@ const BookingForm = ({ specialistDid }) => {
           appointmentDate,
         },
         message: {
-          protocol: protocolDefinition.protocol,
-          protocolPath: "bookAppointment",
+          // protocol: protocolDefinition.protocol,
+          // protocolPath: "bookAppointment",
           schema: protocolDefinition.types.bookAppointment.schema,
           recipient: specialistDid,
           published: true,
