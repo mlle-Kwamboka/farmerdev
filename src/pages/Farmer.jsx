@@ -57,7 +57,7 @@ const Farmer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // console.log("Fetching farmer Profile");
+        console.log("Fetching farmer Profile");
         const response = await web5.dwn.records.query({
           from: did,
           message: {
@@ -89,9 +89,12 @@ const Farmer = () => {
       }
     };
 
+    console.log('Farmer data' + farmerData)
+   
+
     const fetchMedicalRecord = async () => {
       try {
-        // console.log("Fetching farmer Profile");
+         console.log("Fetching farmer Profile");
         const response = await web5.dwn.records.query({
           from: did,
           message: {
@@ -103,16 +106,19 @@ const Farmer = () => {
         });
 
         if (response.status.code === 200) {
+          console.log("Respone" + response.status.code)
           const medicalRec = await Promise.all(
             response.records.map(async (record) => {
+              console.log('Farmer data Records' + response.records)
               const data = await record.data.json();
+              console.log("dara" + data);
               return {
                 ...data,
                 recordId: record.id,
               };
             })
           );
-          // console.log("medical record : ", medicalRec);
+        console.log("medical record : ", medicalRec);
           setMedicalData(medicalRec);
           return medicalRec;
         } else {
@@ -241,9 +247,9 @@ const Farmer = () => {
                   <div className="bg-white rounded-xl p-4 mb-8">
                     <h3 className="text-[20px] font-medium">Age</h3>
                     <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
-                      {calculateAge(farmerData.dob) <= 1
+                      {/* {calculateAge(farmerData.dob) <= 1
                         ? `${calculateAge(farmerData.dob)} year old`
-                        : `${calculateAge(farmerData.dob)} years old`}
+                        : `${calculateAge(farmerData.dob)} years old`} */}
                     </div>
                   </div>
                 </div>

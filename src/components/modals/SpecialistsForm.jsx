@@ -27,19 +27,46 @@ export default function SpecialistsForm({ userType, closeModal }) {
     });
   };
 
+  // const createSpecialist = async () => {
+    
+  //   try {
+  //     console.log("Data to be saved:", formState);
+  //     const { record, status } = await web5.dwn.records.write({
+  //       data: { ...formState },
+  //       message: {
+  //         protocol: protocolDefinition.protocol,
+  //         protocolPath: "specialistProfile",
+  //         schema: protocolDefinition.types.specialistProfile.schema,
+  //         recipient: did,
+  //         published: true,
+  //       },
+  //     });
+
+  //     const DIDs = [did, publicDid];
+  //     await Promise.all(
+  //       DIDs.map(async (did) => {
+  //         await record.send(did);
+  //       })
+  //     );
+  //   } catch (error) {
+  //     console.error("Error Creating specialist data : ", error);
+  //   }
+  // };
+
   const createSpecialist = async () => {
     try {
+      // Log the data before saving
+      console.log("Data to be saved:", formState);
+  
       const { record, status } = await web5.dwn.records.write({
         data: { ...formState },
         message: {
-          protocol: protocolDefinition.protocol,
-          protocolPath: "specialistProfile",
           schema: protocolDefinition.types.specialistProfile.schema,
           recipient: did,
           published: true,
         },
       });
-
+  
       const DIDs = [did, publicDid];
       await Promise.all(
         DIDs.map(async (did) => {
@@ -50,6 +77,7 @@ export default function SpecialistsForm({ userType, closeModal }) {
       console.error("Error Creating specialist data : ", error);
     }
   };
+  
 
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition(

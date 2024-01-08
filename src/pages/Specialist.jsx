@@ -245,7 +245,7 @@ const Specialist = () => {
                             Speciality
                           </h3>
                           <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
-                            <span>{specialistData.speciality}</span>
+                            <span>{specialistData.speciality}</span>   
                           </div>
                         </div>
                       </div>
