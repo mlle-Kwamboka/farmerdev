@@ -216,7 +216,7 @@ const Farmer = () => {
                 <h2 className="text-[36px] font-normal">
                   Welcome{" "}
                   <span className="text-olive-green font-bold">
-                    {/* {farmerData.name}! */}
+                    {farmerData.name}!
                   </span>
                 </h2>
               </div>
