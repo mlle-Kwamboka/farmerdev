@@ -54,6 +54,7 @@ const Farmer = () => {
     setShowBookingForm(false);
   };
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -159,6 +160,8 @@ const Farmer = () => {
     } else {
       return age;
     }
+
+    
   };
 
   return (
