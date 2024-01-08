@@ -7,8 +7,9 @@ import "swiper/css/pagination";
 import avatar from "/assets/avatar.svg";
 import { useContext } from "react";
 import { Web5Context } from "../utils/Web5Context";
+import {specialistData} from "./specialistsData.js"
 
-const Specialists = ({ specialistData }) => {
+const Specialists = ({specialistData}) => {
   const { loadingSpecialist } = useContext(Web5Context);
 
   if (specialistData.length === 0) {
@@ -26,7 +27,7 @@ const Specialists = ({ specialistData }) => {
       </div>
     );
   }
-  // console.log(specialistData);
+ console.log("Spec data : ",specialistData)
   return (
     <div className="my-[100px]">
       <h2 className="ml-[84px] font-poppins font-semibold text-5xl">

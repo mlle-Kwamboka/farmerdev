@@ -6,6 +6,7 @@ import Specialists from "../components/Specialists";
 import Services from "../components/services/Services";
 // import { specialistData as specialist } from "../components/specialistsData";
 import { Web5Context } from "../utils/Web5Context";
+import { specialistData as sData } from "../components/specialistsData.js"
 
 const Home = ({ openModal }) => {
   const { specialistList } = useContext(Web5Context);
@@ -14,7 +15,7 @@ const Home = ({ openModal }) => {
     <>
       <Header openModal={openModal} />
       <Services />
-      <Specialists specialistData={specialistList} />
+      <Specialists specialistData={sData} />
       <Footer />
     </>
   );
