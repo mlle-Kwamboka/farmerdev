@@ -103,9 +103,11 @@ const Farmer = () => {
         });
 
         if (response.status.code === 200) {
+          console.log("Respone" + response)
           const medicalRec = await Promise.all(
             response.records.map(async (record) => {
               const data = await record.data.json();
+              console.log("dara" + data);
               return {
                 ...data,
                 recordId: record.id,
@@ -210,7 +212,7 @@ const Farmer = () => {
                 <h2 className="text-[36px] font-normal">
                   Welcome{" "}
                   <span className="text-olive-green font-bold">
-                    {farmerData.name}!
+                    {/* {farmerData.name}! */}
                   </span>
                 </h2>
               </div>
@@ -241,9 +243,9 @@ const Farmer = () => {
                   <div className="bg-white rounded-xl p-4 mb-8">
                     <h3 className="text-[20px] font-medium">Age</h3>
                     <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
-                      {calculateAge(farmerData.dob) <= 1
+                      {/* {calculateAge(farmerData.dob) <= 1
                         ? `${calculateAge(farmerData.dob)} year old`
-                        : `${calculateAge(farmerData.dob)} years old`}
+                        : `${calculateAge(farmerData.dob)} years old`} */}
                     </div>
                   </div>
                 </div>
