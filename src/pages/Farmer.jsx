@@ -57,7 +57,7 @@ const Farmer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // console.log("Fetching farmer Profile");
+        console.log("Fetching farmer Profile");
         const response = await web5.dwn.records.query({
           from: did,
           message: {
@@ -91,7 +91,7 @@ const Farmer = () => {
 
     const fetchMedicalRecord = async () => {
       try {
-        // console.log("Fetching farmer Profile");
+         console.log("Fetching farmer Profile");
         const response = await web5.dwn.records.query({
           from: did,
           message: {
@@ -112,7 +112,7 @@ const Farmer = () => {
               };
             })
           );
-          // console.log("medical record : ", medicalRec);
+        console.log("medical record : ", medicalRec);
           setMedicalData(medicalRec);
           return medicalRec;
         } else {
