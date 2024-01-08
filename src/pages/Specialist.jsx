@@ -139,6 +139,7 @@ const Specialist = () => {
 
     return dateA - dateB;
   });
+  console.log(specialistData.name);
 
   return (
     <div className="w-full mx-auto bg-og-blue p-5">
@@ -218,7 +219,7 @@ const Specialist = () => {
                 <h2 className="text-[36px] font-normal">
                   Welcome{" "}
                   <span className="text-olive-green font-bold">
-                    {specialistData.name} !
+                    {/* {specialistData.name} ! */}
                   </span>
                 </h2>
               </div>
@@ -244,7 +245,7 @@ const Specialist = () => {
                             Speciality
                           </h3>
                           <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
-                            <span>{specialistData.speciality}</span>
+                            {/* <span>{specialistData.speciality}</span> */}
                           </div>
                         </div>
                       </div>

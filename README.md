@@ -69,7 +69,7 @@ To ensure optimal functionality of the application, create a `.env` file in the 
 
 ```
 VITE_PUBLIC_DID=did:ion:EiCXbwh...JnIn19
-VITE_PROTOCOL_URL=http://localhost:5173/
+VITE_PROTOCOL_URL=http://localhost:5000/
 ```
 
 **Note:** 
