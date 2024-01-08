@@ -49,10 +49,9 @@ export default function FarmersForm({ userType, closeModal }) {
       const { record, status } = await web5.dwn.records.write({
         data: formState,
         message: {
-          protocol: protocolDefinition.protocol,
-          protocolPath: "farmerProfile",
-          schema: protocolDefinition.types.farmerProfile.schema,
+          schema: protocolDefinition.types.specialistProfile.schema,
           recipient: did,
+          published: true,
         },
       });
       await record.send(did);
@@ -60,10 +59,12 @@ export default function FarmersForm({ userType, closeModal }) {
       console.error("Error Creating farmer data : ", error);
     }
   };
+ 
 
   const formSubmit = (e) => {
     e.preventDefault();
     getCurrentLocation();
+    console.log("Farmer data to be saved:", formState);
     createFarmer().finally(() => {
       closeModal();
       setUserTypeAndRedirect("farmer");
