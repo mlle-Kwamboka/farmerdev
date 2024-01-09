@@ -310,7 +310,7 @@ const Farmer = () => {
               <div className="w-full inline-flex item-center justify-between gap-x-8">
                 {/* 1st */}
                 <div className="rounded-xl p-4 w-1/3 h-50">
-                <div className="bg-[#4caf50] rounded-xl p-4 w-2/5 max-h-[150px]" >
+                <div className="bg-[#4caf50] rounded-xl p-4 w-5/5 max-h-[150px]" >
                   <div className="bg-white rounded-xl p-4 mb-8">
                     <h3 className="text-[20px] font-medium">DID</h3>
                     <div className="text-[#9e9e9e] inline-flex space-x-3 items-center justify-between">
@@ -336,14 +336,14 @@ const Farmer = () => {
                   {/* <Calendar /> */}
                 </div>
                 {/* 2nd */}
-                <div className="rounded-xl p-4 w-1/3">
+                <div className="rounded-xl p-4 w-1/4">
                   <div className="relative">
                     <img
                       src="/assets/images/hero.png"
                       className="relative object-contain"
                       alt="farmer booking"
                     />
-                    <div className="absolute bottom-0 px-4 pt-8 pb-3 top-0 bg-[#00000099] w-full item-center text-center rounded-xl">
+                    <div className="absolute bottom-0 px-4 pt-4 pb-10 top-10 bg-[#00000099] w-full item-center text-center rounded-xl">
                       <p className="text-white font-semibold mb-16">
                         My Records
                       </p>
@@ -455,7 +455,7 @@ const Farmer = () => {
               </div>
             </div>
             <div className="w-full inline-flex item-center justify-between gap-x-16">
-              <div className="bg-[#FFFFFF] rounded-xl p-4 w-2/5">
+              <div className="bg-[#FFFFFF] rounded-xl p-4 w-3/5">
                 <div className="bg-white rounded-xl p-4">
                   <div className="inline-flex items-center justify-between w-full">
                     <h2 className="font-bold font-4xl">Reminder</h2>
